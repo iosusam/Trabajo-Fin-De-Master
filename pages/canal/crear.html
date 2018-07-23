@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Suite Britel</title>
+
+   <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../../dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="../../index_administrador.html" class="d-block">Iosu San Martín</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Cliente
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a id = "linkClienteInformacion" href="../../pages/cliente/informacion.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Información</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a id = "linkClienteCrear" href="../../pages/cliente/crear.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a id = "linkClienteModificar" href="../../pages/cliente/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Modificar</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a id = "linkClienteEliminar" href="../../pages/cliente/eliminar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+		  
+		  <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Canales
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="../../pages/canal/informacion.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Información</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/canal/crear.html" class="nav-link active">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/canal/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Modificar</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="../../pages/canal/eliminar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+		  
+		  <li class="nav-item has-treeview">
+            <a href="../../pages/paquetes/informacion.html" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Paquetes
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="../../pages/paquetes/informacion.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Información</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/paquetes/crear.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/paquetes/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Modificar</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="../../pages/paquetes/eliminar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+		  
+		  <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Epg
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="../../pages/epg/informacion.html" class="nav-link ">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Información</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/epg/crear.html" class="nav-link ">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/epg/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Modificar</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="../../pages/epg/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+		  
+		  <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Usuarios
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="../../pages/usuarios/informacion.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Información</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/usuarios/crear.html" class="nav-link ">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/usuarios/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Modificar</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="../../pages/usuarios/eliminar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+		  
+		  <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Dispositivos
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="../../pages/dispositivos/informacion.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Información</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="../../pages/dispositivos/todos.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Todos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/dispositivos/crear.html" class="nav-link ">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/dispositivos/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Modificar</p>
+                </a>
+              </li>
+			  <li class="nav-item">
+                <a href="../../pages/dispositivos/eliminar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+		  
+		  <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Parrillas
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+			  <li class="nav-item">
+                <a href="../../pages/parrilla/informacion.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Información</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../pages/parrilla/modificar.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Modificar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <div class="card card-warning">
+	  <div class="card-header">
+		<h3 class="card-title">Formulario Información del Cliente</h3>
+	  </div>
+	  <!-- /.card-header -->
+	  <div class="card-body">
+		<form id="myForm"  role="form" >
+		  <!-- text input -->
+		  <div class="form-group">
+			<label>Posición Parrilla</label>
+			<input id="Posicion" type="number" class="form-control" placeholder="Enter ...">
+		  </div>
+		  <div class="form-group">
+			<label>Nombre</label>
+			<input id="Nombre" type="text" class="form-control" placeholder="Enter ...">
+		  </div>
+		  <div class="form-group">
+			<label>Descripción</label>
+			<input id="Descripcion" type="text" class="form-control" placeholder="Enter ...">
+		  </div>
+		  <div class="form-group">
+			<label>URL</label>
+			<input id="URL" type="text" class="form-control" placeholder="Enter ...">
+		  </div>
+		  <div class="form-group">
+			<label>Aspect Ratio</label>
+			<input id="Aspect" type="text" class="form-control" placeholder="Enter ...">
+		  </div>
+		  <div class="form-group">
+			<label>Calidad</label>
+			<select id="Calidad" class="form-control">
+			  <option>SD</option>
+			  <option>HD</option>
+			</select>
+		  </div>
+		  <div id="Visibilidad" class="form-group">
+			<label>Visibilidad</label>
+			<select id="Calidad" class="form-control">
+			  <option>Public</option>
+			  <option>Private</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+			<label>Imagen Pequeña</label>
+			<input id="Pequena" type="text" class="form-control" placeholder="Enter ...">
+		  </div>
+		  <div class="form-group">
+			<label>Imagen Mediana</label>
+			<input id="Mediana" type="text" class="form-control" placeholder="Enter ...">
+		  </div>
+		  <div class="form-group">
+			<label>Imagen Grande</label>
+			<input id="Grande" type="text" class="form-control" placeholder="Enter ...">
+		  </div>
+		</form>
+	  </div>
+	  <!-- /.card-body -->
+	  <!-- /.card -->
+	  <div class="card-footer" align= "center">
+		<button class="btn btn-primary" onclick="modificarChannel()" >Guardar</button>
+	  </div>
+	</div>
+            
+			
+			
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right 
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div> -->
+    <!-- Default to the left 
+    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+	-->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- MD5 Hash generations -->
+<script src="../../plugins/MD5/md5.js"></script>
+</body>
+</html>
+
+<script>
+function modificarChannel() {
+
+	var Posicion = $("#Posicion").val();
+	var Nombre = $("#Nombre").val();
+	var Descripcion = $("#Descripcion").val();
+	var URL = $("#URL").val();
+	var Aspect = $("#Aspect").val();
+	var Calidad = $("#Calidad").find('option:selected').text();
+	var Visibilidad = $("#Visibilidad").find('option:selected').text();
+	var Pequeña = $("#Pequena").val();
+	var Mediana = $("#Mediana").val();
+	var Grande = $("#Grande").val();
+	
+
+//
+	
+    //Peticion a la api para obtener los clientes
+	$.get( apiUrl + "/channel/alta", {pid : strMD5, logicalChannelNumber : Posicion, url : URL, name : Nombre, description : Descripcion, aspectRatio : Aspect, quality : Calidad, visibility : Visibilidad, smallIcon : Pequeña, mediumIcon : Mediana, largeIcon : Grande}, function( data ) {
+		//Se elimina la tabla
+		$(".card").remove();
+		//Se añade el status
+		$(".container-fluid").append("<h2> Message: " + data.message + "</h2>");
+		//Se añade el status
+		$(".container-fluid").append("<h1> Status: " + data.status + "</h1>");
+	}, "json" );
+
+}
+</script>
