@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 07-abr-2018 16:52:05 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Epg" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="epg">
+        <id name="idepg" type="java.lang.Integer">
+            <column name="IDEpg"/>
+            <generator class="foreign">
+                <param name="property">channels</param>
+            </generator>
+        </id>
+        <one-to-one class="model.Channels" constrained="true" embed-xml="true" name="channels"/>
+    </class>
+</hibernate-mapping>

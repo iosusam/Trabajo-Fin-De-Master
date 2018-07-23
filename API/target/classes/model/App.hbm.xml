@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 03-jun-2018 17:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.App" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="app">
+        <id name="idapp" type="java.lang.Integer">
+            <column name="IDApp"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="Nombre" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="versionApp" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="VersionApp" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="ubicacionServer" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="UbicacionServer" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="organizacions" optimistic-lock="true" sort="unsorted" table="containorganizacionapp">
+            <key on-delete="noaction">
+                <column name="IDApp" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Organizacion" not-found="exception" unique="false">
+                <column name="IDOrganizacion" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="suscriptoreses" optimistic-lock="true" sort="unsorted" table="suscriptores">
+            <key on-delete="noaction">
+                <column name="IDApp" not-null="true"/>
+            </key>
+            <one-to-many class="model.Suscriptores" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

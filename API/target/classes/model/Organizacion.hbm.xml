@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 03-jun-2018 17:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Organizacion" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="organizacion">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="model.Parrilla" embed-xml="true" fetch="select" insert="true" name="parrilla" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="IDParrilla" not-null="true" unique="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Nombre" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="pais" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Pais" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="region" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Region" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="direccion" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Direccion" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="codigoPostal" optimistic-lock="true" type="int" unique="false">
+            <column name="Codigo_Postal" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="ciudad" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Ciudad" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="telefono" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="Telefono" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Email" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="apps" optimistic-lock="true" sort="unsorted" table="containorganizacionapp">
+            <key on-delete="noaction">
+                <column name="IDOrganizacion" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.App" not-found="exception" unique="false">
+                <column name="IDApp" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="infochannelses" optimistic-lock="true" sort="unsorted" table="infochannels">
+            <key on-delete="noaction">
+                <column name="IDOrganizacion" not-null="true"/>
+            </key>
+            <one-to-many class="model.Infochannels" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="suscriptoreses" optimistic-lock="true" sort="unsorted" table="suscriptores">
+            <key on-delete="noaction">
+                <column name="IDOrganizacion" not-null="true"/>
+            </key>
+            <one-to-many class="model.Suscriptores" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="usuarioses" optimistic-lock="true" sort="unsorted" table="containorganizacionusuarios">
+            <key on-delete="noaction">
+                <column name="ID" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Usuarios" not-found="exception" unique="false">
+                <column name="IdUsuario" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

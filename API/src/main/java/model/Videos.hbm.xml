@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 03-jun-2018 17:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Videos" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="videos">
+        <id name="idvideo" type="java.lang.Integer">
+            <column name="IDVideo"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="titulo" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="Titulo" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="publish" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="Publish" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="unpublish" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="Unpublish" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="visibilidad" optimistic-lock="true" type="string" unique="false">
+            <column length="7" name="Visibilidad" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="calidad" optimistic-lock="true" type="string" unique="false">
+            <column length="3" name="Calidad" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="categoriases" optimistic-lock="true" sort="unsorted" table="containvideoscategia">
+            <key on-delete="noaction">
+                <column name="IDVideo" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Categorias" not-found="exception" unique="false">
+                <column name="IDCategoria" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

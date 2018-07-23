@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23-may-2018 23:08:40 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Containsorganizacionusuarios" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="containsorganizacionusuarios">
+        <id name="idorganizacion" type="int">
+            <column name="IDOrganizacion"/>
+            <generator class="foreign">
+                <param name="property">organizacion</param>
+            </generator>
+        </id>
+        <one-to-one class="model.Organizacion" constrained="true" embed-xml="true" name="organizacion"/>
+        <many-to-one class="model.Usuarios" embed-xml="true" fetch="select" insert="true" name="usuarios" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="IDUsuario" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

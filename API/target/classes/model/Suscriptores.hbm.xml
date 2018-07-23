@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 03-jun-2018 17:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Suscriptores" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="suscriptores">
+        <id name="idsuscriptor" type="string">
+            <column length="20" name="IDSuscriptor"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="model.App" embed-xml="true" fetch="select" insert="true" name="app" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="IDApp" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="model.Organizacion" embed-xml="true" fetch="select" insert="true" name="organizacion" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="IDOrganizacion" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="activo" optimistic-lock="true" type="byte" unique="false">
+            <column name="Activo" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

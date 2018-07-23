@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 06-abr-2018 22:50:49 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Containparrichanels" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="containparrichanels">
+        <composite-id class="model.ContainparrichanelsId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="idchannels" type="int">
+                <column name="IDChannels"/>
+            </key-property>
+            <key-property name="idparrilla" type="int">
+                <column name="IDParrilla"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 26-may-2018 14:21:56 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Containappsuscriptores" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="containappsuscriptores">
+        <id name="idapp" type="int">
+            <column name="IDApp"/>
+            <generator class="foreign">
+                <param name="property">app</param>
+            </generator>
+        </id>
+        <one-to-one class="model.App" constrained="true" embed-xml="true" name="app"/>
+        <many-to-one class="model.Suscriptores" embed-xml="true" fetch="select" insert="true" name="suscriptores" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="20" name="IDSuscriptor" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

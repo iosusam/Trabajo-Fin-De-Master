@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 07-abr-2018 16:52:05 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Vod" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="vod">
+        <id name="idvod" type="java.lang.Integer">
+            <column name="IDVod"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="idorganizacion" optimistic-lock="true" type="int" unique="false">
+            <column name="IDOrganizacion" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="idcategoria" optimistic-lock="true" type="int" unique="false">
+            <column name="IDCategoria" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

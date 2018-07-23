@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 07-abr-2018 16:52:05 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Categorias" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="categorias">
+        <id name="idcategoria" type="java.lang.Integer">
+            <column name="IDCategoria"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="idpadre" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="IDPadre" unique="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="videoses" optimistic-lock="true" sort="unsorted" table="containvideoscategia">
+            <key on-delete="noaction">
+                <column name="IDCategoria" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Videos" not-found="exception" unique="false">
+                <column name="IDVideo" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

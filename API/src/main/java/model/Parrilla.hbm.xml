@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 03-jun-2018 17:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Parrilla" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="parrilla">
+        <id name="idparrilla" type="java.lang.Integer">
+            <column name="IDParrilla"/>
+            <generator class="identity"/>
+        </id>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="channelses" optimistic-lock="true" sort="unsorted" table="containparrichanels">
+            <key on-delete="noaction">
+                <column name="IDParrilla" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Channels" not-found="exception" unique="false">
+                <column name="IDChannels" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="paqueteses" optimistic-lock="true" sort="unsorted" table="containparripaquetes">
+            <key on-delete="noaction">
+                <column name="IDParrilla" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Paquetes" not-found="exception" unique="false">
+                <column name="IDPaquetes" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="organizacions" optimistic-lock="true" sort="unsorted" table="organizacion">
+            <key on-delete="noaction">
+                <column name="IDParrilla" not-null="true" unique="true"/>
+            </key>
+            <one-to-many class="model.Organizacion" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

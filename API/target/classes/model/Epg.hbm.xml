@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 03-jun-2018 17:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Epg" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="epg">
+        <id name="idepg" type="java.lang.Integer">
+            <column name="IDEpg"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="model.Channels" embed-xml="true" fetch="select" insert="true" name="channels" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="IDChannels" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombrePrograma" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="NombrePrograma" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="categoria" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Categoria" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="edadMinima" optimistic-lock="true" type="int" unique="false">
+            <column name="EdadMinima" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaInicio" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="FechaInicio" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

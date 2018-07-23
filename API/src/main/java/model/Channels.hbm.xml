@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 03-jun-2018 17:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="suite" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Channels" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="channels">
+        <id name="idchannels" type="java.lang.Integer">
+            <column name="IDChannels"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="logicalChannelNumber" optimistic-lock="true" type="int" unique="false">
+            <column name="LogicalChannelNumber" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="url" optimistic-lock="true" type="string" unique="false">
+            <column length="40" name="Url" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="Name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="description" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Description"/>
+        </property>
+        <property generated="never" lazy="false" name="aspectRatio" optimistic-lock="true" type="string" unique="false">
+            <column length="6" name="AspectRatio" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="quality" optimistic-lock="true" type="string" unique="false">
+            <column length="3" name="Quality" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="visibility" optimistic-lock="true" type="string" unique="false">
+            <column length="8" name="Visibility" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="smallIcon" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="SmallIcon" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="mediumIcon" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="MediumIcon" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="largeIcon" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="LargeIcon" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="infochannelses" optimistic-lock="true" sort="unsorted" table="infochannels">
+            <key on-delete="noaction">
+                <column name="IDChannels" not-null="true"/>
+            </key>
+            <one-to-many class="model.Infochannels" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="parrillas" optimistic-lock="true" sort="unsorted" table="containparrichanels">
+            <key on-delete="noaction">
+                <column name="IDChannels" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Parrilla" not-found="exception" unique="false">
+                <column name="IDParrilla" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="epgs" optimistic-lock="true" sort="unsorted" table="epg">
+            <key on-delete="noaction">
+                <column name="IDChannels" not-null="true"/>
+            </key>
+            <one-to-many class="model.Epg" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="paqueteses" optimistic-lock="true" sort="unsorted" table="containchannelspaquetes">
+            <key on-delete="noaction">
+                <column name="IDChannels" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="model.Paquetes" not-found="exception" unique="false">
+                <column name="IDPaquete" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
